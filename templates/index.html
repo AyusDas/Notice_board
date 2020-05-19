@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        NOTICE BOARD
+    </title>
+    <style>
+        *{
+            background-color: whitesmoke;
+            margin-left: 1.5rem;
+        }
+        
+        h1{ 
+            text-align: center;
+            font-family: cursive;
+            letter-spacing: 10px;
+            font-weight: lighter;
+            color: rgb(19, 18, 18);
+        }
+        h3{
+            font-size: x-large;
+            font-family: cursive;
+            color: crimson;
+            letter-spacing: 5px;
+        }
+        h4{
+            font-size: larger;
+            font-family: cursive;
+            color: rgb(58, 68, 211);
+            letter-spacing: 2px;
+            font-weight: normal;
+        }
+        .display_post{
+            margin-top: 3.5rem;
+        }
+        body::-webkit-scrollbar{
+            width: 0.5rem
+        }
+        body::-webkit-scrollbar-track{
+            background: black;
+        }
+        body::-webkit-scrollbar-thumb{
+            background: darkslateblue;
+        }
+        .redirect{
+            font-size: x-large;
+            color: rgb(13, 116, 201);
+            text-align: center;
+            font-family: cursive;
+            letter-spacing: 2px;
+            border: none;
+        }
+        .redirect:hover{
+            color: rgb(18, 153, 47);
+        }
+        .navbar{
+            text-align: center;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>
+        NOTICE BOARD
+    </h1>
+    
+    
+    <div class="display_post">
+        {% for post in posts %}
+          <h3>{{ post.date_posted }}</h3>
+          <h4> {{ post.content }} </h4><br><br>
+        {% endfor %}
+    </div>
+    <br><br>
+    <nav class="navbar">
+        <a class="redirect" href="/upload">POST</a>
+    </nav>
+    <br><br>
+</body>
+</html>
